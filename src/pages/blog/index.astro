@@ -1,114 +1,278 @@
 ---
-import { Image } from 'astro:assets';
-import { getCollection } from 'astro:content';
-import BaseHead from '../../components/BaseHead.astro';
-import Footer from '../../components/Footer.astro';
-import FormattedDate from '../../components/FormattedDate.astro';
-import Header from '../../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import BaseHead from "../../components/BaseHead.astro";
+import Footer from "../../components/Footer.astro";
+import FormattedDate from "../../components/FormattedDate.astro";
+import Header from "../../components/Header.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			main {
-				width: 960px;
-			}
-			ul {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 2rem;
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
-			}
-			ul li {
-				width: calc(50% - 1rem);
-			}
-			ul li * {
-				text-decoration: none;
-				transition: 0.2s ease;
-			}
-			ul li:first-child {
-				width: 100%;
-				margin-bottom: 1rem;
-				text-align: center;
-			}
-			ul li:first-child img {
-				width: 100%;
-			}
-			ul li:first-child .title {
-				font-size: 2.369rem;
-			}
-			ul li img {
-				margin-bottom: 0.5rem;
-				border-radius: 12px;
-			}
-			ul li a {
-				display: block;
-			}
-			.title {
-				margin: 0;
-				color: rgb(var(--black));
-				line-height: 1;
-			}
-			.date {
-				margin: 0;
-				color: rgb(var(--gray));
-			}
-			ul li a:hover h4,
-			ul li a:hover .date {
-				color: rgb(var(--accent));
-			}
-			ul a:hover img {
-				box-shadow: var(--box-shadow);
-			}
-			@media (max-width: 720px) {
-				ul {
-					gap: 0.5em;
-				}
-				ul li {
-					width: 100%;
-					text-align: center;
-				}
-				ul li:first-child {
-					margin-bottom: 0;
-				}
-				ul li:first-child .title {
-					font-size: 1.563em;
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<Header />
-		<main>
-			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<a href={`/blog/${post.id}/`}>
-									{post.data.heroImage && (
-										<Image width={720} height={360} src={post.data.heroImage} alt="" />
-									)}
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      main {
+        width: 960px;
+        max-width: calc(100% - 2em);
+        margin: auto;
+        padding: 3em 1em;
+      }
+
+      /* List layout */
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      ul li {
+        width: 100%;
+      }
+
+      ul li:first-child {
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+
+      ul li * {
+        text-decoration: none;
+      }
+
+      /* Featured first post - Vertical Layout */
+      ul li:first-child a {
+        display: flex;
+        flex-direction: column;
+        background: linear-gradient(
+          135deg,
+          rgba(var(--gray-light), 0.3),
+          rgba(var(--accent), 0.05)
+        );
+        border: 2px solid rgba(var(--accent), 0.2);
+        border-radius: 12px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      ul li:first-child a:hover {
+        border-color: rgba(var(--accent), 0.5);
+        box-shadow: var(--box-shadow);
+        transform: translateY(-2px);
+      }
+
+      ul li:first-child img {
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+        transition: transform 0.3s ease;
+      }
+
+      ul li:first-child a:hover img {
+        transform: scale(1.02);
+      }
+
+      ul li:first-child .content {
+        padding: 2rem;
+        text-align: left;
+      }
+
+      ul li:first-child .title {
+        font-size: 2.441em;
+        margin: 0.5rem 0;
+        line-height: 1.2;
+      }
+
+      ul li:first-child .date {
+        font-size: 0.9em;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      /* Regular posts - Horizontal Layout */
+      ul li:not(:first-child) {
+        border: 1px solid rgb(var(--gray-light));
+        border-radius: 12px;
+        overflow: hidden;
+        transition: all 0.2s ease;
+      }
+
+      ul li:not(:first-child):hover {
+        border-color: rgb(var(--accent));
+        box-shadow: 0 4px 12px rgba(var(--gray), 0.15);
+        transform: translateY(-1px);
+      }
+
+      ul li:not(:first-child) a {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        min-height: 200px;
+      }
+
+      ul li:not(:first-child) .post-image {
+        flex-shrink: 0;
+        width: 320px;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        background: rgb(var(--gray-light));
+      }
+
+      ul li:not(:first-child) .post-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0;
+        transition: transform 0.3s ease;
+      }
+
+      ul li:not(:first-child):hover .post-image img {
+        transform: scale(1.05);
+      }
+
+      ul li:not(:first-child) .post-content {
+        flex-grow: 1;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+      }
+
+      ul li img {
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+        transition: transform 0.3s ease;
+      }
+
+      /* Typography */
+      .title {
+        margin: 0 0 0.5rem 0;
+        color: rgb(var(--black));
+        line-height: 1.3;
+        transition: color 0.2s ease;
+      }
+
+      .description {
+        color: rgb(var(--gray-dark));
+        line-height: 1.5;
+        margin-bottom: 1rem;
+        flex-grow: 1;
+      }
+
+      ul li:not(:first-child) .title {
+        font-size: 1.563em;
+        margin: 0.5rem 0 0.75rem 0;
+      }
+
+      ul li:not(:first-child) .post-content .date {
+        font-size: 0.9em;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .date {
+        margin: 0;
+        color: rgb(var(--gray));
+      }
+
+      ul li a:hover .title {
+        color: rgb(var(--accent));
+      }
+
+      /* Mobile responsive */
+      @media (max-width: 720px) {
+        main {
+          padding: 1.5em 1em;
+        }
+
+        ul {
+          gap: 1.5rem;
+        }
+
+        ul li:first-child {
+          margin-bottom: 0.5rem;
+        }
+
+        ul li:first-child .content {
+          padding: 1.5rem;
+        }
+
+        ul li:first-child .title {
+          font-size: 1.563em;
+        }
+
+        /* Regular posts mobile - stack vertically */
+        ul li:not(:first-child) a {
+          flex-direction: column;
+          min-height: auto;
+        }
+
+        ul li:not(:first-child) .post-image {
+          width: 100%;
+          height: 200px;
+        }
+
+        ul li:not(:first-child) .post-content {
+          padding: 1.25rem;
+        }
+
+        ul li:not(:first-child) .title {
+          font-size: 1.25em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <section>
+        <ul>
+          {
+            posts.map((post, index) => (
+              <li>
+                <a href={`/blog/${post.id}/`}>
+                  {post.data.heroImage &&
+                    (index === 0 ? (
+                      <Image
+                        width={720}
+                        height={360}
+                        src={post.data.heroImage}
+                        alt=""
+                      />
+                    ) : (
+                      <div class="post-image">
+                        <Image
+                          width={480}
+                          height={320}
+                          src={post.data.heroImage}
+                          alt=""
+                        />
+                      </div>
+                    ))}
+                  <div class={index === 0 ? "content" : "post-content"}>
+                    <p class="date">
+                      <FormattedDate date={post.data.pubDate} />
+                    </p>
+                    <h4 class="title">{post.data.title}</h4>
+                    <p class="description">{post.data.description}</p>
+                  </div>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </main>
+    <Footer />
+  </body>
 </html>
