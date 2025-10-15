@@ -13,23 +13,90 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
   <body>
     <Header />
     <main>
-      <h1 class="header">
-        Hi, I'm Johan, Engineering Leader Who Builds Teams & Ships Products
-      </h1>
+      <h1 class="header">Hi, I'm Johan</h1>
       <h2 class="sub-header">
-        Former CTO with 20 years turning technical vision into reality.
-        Currently leading AI product development at <a
+        Former CTO & technical co-founder with 20 years in tech. Currently
+        leading AI product development at <a
           href="https://cylinderhealth.com/"
           target="_blank"
-          rel="nofollow noopener noreferrer">Cylinder</a
+          rel="nofollow noopener noreferrer">Cylinder Health</a
         >.
       </h2>
       <p>
-        I build high-performing engineering teams and architect AI-powered SaaS
-        products. Former CTO and co-founder. Currently leading a team at a
-        Series B HealthTech startup, where I'm shipping HIPAA-compliant LLM
-        features and scaling engineering culture.
+        20 years of experience from IC engineer to founder to engineering
+        manager. I specialize in building high-performing teams, architecting
+        complex systems, and delivering products that matter.
       </p>
+
+      <section class="value-props">
+        <div class="prop-card">
+          <div class="prop-icon">🚀</div>
+          <h3>Team Builder</h3>
+          <p>
+            I hire, mentor, and scale engineering teams. Built my current team
+            from scratch and doubled team size while maintaining high
+            performance.
+          </p>
+        </div>
+
+        <div class="prop-card">
+          <div class="prop-icon">🏗️</div>
+          <h3>Technical Architect</h3>
+          <p>
+            I design complex systems that work. From ML-powered computer vision
+            platforms to HIPAA-compliant AI features, I architect solutions that
+            ship.
+          </p>
+        </div>
+
+        <div class="prop-card">
+          <div class="prop-icon">📈</div>
+          <h3>Product Shipper</h3>
+          <p>
+            I lead high-stakes projects to completion. Whether it's a company
+            rebrand or new AI product features, I deliver on time with quality.
+          </p>
+        </div>
+      </section>
+
+      <section class="working-on">
+        <h2>What I'm Working On</h2>
+        <p>Currently I'm:</p>
+        <ul>
+          <li>Leading AI/ML product initiatives using LLMs</li>
+          <li>Building and scaling a an engineering team</li>
+          <li>Leading the Frontend team</li>
+          <li>
+            Architecting HIPAA-compliant systems with Firebase, Go, and React
+          </li>
+          <li>
+            Establishing engineering best practices and community of practice
+            initiatives
+          </li>
+        </ul>
+      </section>
+
+      <section class="experience-snapshot">
+        <h2>Experience Snapshot</h2>
+        <div class="snapshot-grid">
+          <div class="snapshot-item">
+            <strong>20 Years in Tech</strong>
+            <span>TypeScript/React/Node.js/Go Expert</span>
+          </div>
+          <div class="snapshot-item">
+            <strong>Former CTO & Co-Founder</strong>
+            <span>Built ML-powered platform from scratch</span>
+          </div>
+          <div class="snapshot-item">
+            <strong>Engineering Manager</strong>
+            <span>Leading teams at Series B startup</span>
+          </div>
+          <div class="snapshot-item">
+            <strong>Full-Stack Engineer</strong>
+            <span>IC → Manager → Founder → Leader</span>
+          </div>
+        </div>
+      </section>
     </main>
     <Footer />
   </body>
@@ -62,6 +129,127 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
     text-decoration: underline;
   }
 
+  /* Value Props Section */
+  .value-props {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 3rem 0;
+  }
+
+  .prop-card {
+    padding: 1.5rem;
+    border: 1px solid rgb(var(--gray-light));
+    border-radius: 8px;
+    background: rgb(var(--gray-light));
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .prop-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .prop-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1;
+  }
+
+  .prop-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: rgb(var(--accent-dark));
+  }
+
+  .prop-card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgb(var(--gray-dark));
+    margin: 0;
+  }
+
+  /* Working On Section */
+  .working-on {
+    margin: 3rem 0;
+  }
+
+  .working-on h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: rgb(var(--accent-dark));
+  }
+
+  .working-on p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: rgb(var(--gray-dark));
+  }
+
+  .working-on ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .working-on li {
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    position: relative;
+    color: rgb(var(--gray-dark));
+  }
+
+  .working-on li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: rgb(var(--accent));
+    font-weight: bold;
+  }
+
+  /* Experience Snapshot Section */
+  .experience-snapshot {
+    margin: 3rem 0;
+  }
+
+  .experience-snapshot h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: rgb(var(--accent-dark));
+  }
+
+  .snapshot-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .snapshot-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.25rem;
+    border-left: 3px solid rgb(var(--accent));
+    background: rgb(var(--gray-light));
+    border-radius: 4px;
+  }
+
+  .snapshot-item strong {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: rgb(var(--accent-dark));
+  }
+
+  .snapshot-item span {
+    font-size: 0.9rem;
+    color: rgb(var(--gray-dark));
+  }
+
   @media (max-width: 720px) {
     .header {
       font-size: 2rem;
@@ -69,6 +257,20 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 
     .sub-header {
       font-size: 1.1rem;
+    }
+
+    .value-props {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .snapshot-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .prop-icon {
+      font-size: 2rem;
     }
   }
 </style>
