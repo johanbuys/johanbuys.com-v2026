@@ -4,7 +4,7 @@
  */
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "johanbuys-com-v2026",
+	"name": "johanbuys-com",
 	"main": "./dist/_worker.js/index.js",
 	"compatibility_date": "2025-10-11",
 	"compatibility_flags": [
