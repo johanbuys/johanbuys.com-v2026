@@ -13,105 +13,279 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
   <body>
     <Header />
     <main>
+
+      <!-- ======== HERO ======== -->
       <section class="hero">
-        <p class="hero-label">Engineering Leader &middot; Builder &middot; Maker</p>
-        <h1 class="hero-title">Hi, I'm Johan<span class="cursor"></span></h1>
-        <p class="hero-intro">
-          Engineering leader with 20 years in tech. Former CTO & technical
-          co-founder. Currently leading engineering at <a
-            href="https://cylinderhealth.com/"
-            target="_blank"
-            rel="nofollow noopener noreferrer">Cylinder Health</a
-          >, where I manage teams shipping member-facing products, drive DevOps
-          enablement, and architect scalable systems.
-        </p>
-        <p class="hero-sub">
-          From IC engineer to founder to engineering manager &mdash; I build
-          high-performing teams, own end-to-end product delivery, and keep my
-          hands on the keyboard.
-        </p>
-      </section>
+        <!-- Crosshair decorations -->
+        <div class="crosshair hero-crosshair-tl">
+          <div class="crosshair-circle"></div>
+        </div>
+        <div class="crosshair hero-crosshair-br" style="animation-delay: 1.5s;">
+          <div class="crosshair-circle"></div>
+        </div>
 
-      <section class="cards reveal-stagger reveal">
-        <div class="card">
-          <div class="card-accent"></div>
-          <h3>Team Builder</h3>
-          <p>
-            I hire, mentor, and grow engineering teams. Built my current team
-            from scratch, doubled its size, launched an internship program, and
-            promoted engineers into senior roles.
+        <!-- Spec label -->
+        <div class="hero-spec animate-entrance delay-3">
+          <span class="rev-label">SPEC-001</span>
+        </div>
+
+        <!-- Section annotation -->
+        <div class="animate-entrance delay-1 hero-annotation">
+          <div class="section-label">
+            <span class="section-label-text">Engineering Leader &middot; Builder &middot; Maker</span>
+          </div>
+        </div>
+
+        <!-- Hero title -->
+        <h1 class="hero-title animate-entrance delay-2">
+          Hi, I'm <span class="hero-name">Johan
+            <svg class="hero-underline" height="6" viewBox="0 0 200 6" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 3 L5 0 L10 3 L15 0 L20 3 L25 0 L30 3 L35 0 L40 3 L45 0 L50 3 L55 0 L60 3 L65 0 L70 3 L75 0 L80 3 L85 0 L90 3 L95 0 L100 3 L105 0 L110 3 L115 0 L120 3 L125 0 L130 3 L135 0 L140 3 L145 0 L150 3 L155 0 L160 3 L165 0 L170 3 L175 0 L180 3 L185 0 L190 3 L195 0 L200 3" stroke="#E63946" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
+            </svg>
+          </span>
+        </h1>
+
+        <!-- Intro -->
+        <div class="hero-body">
+          <p class="hero-intro animate-entrance delay-3">
+            Engineering leader with 20 years in tech. Former CTO &amp; technical
+            co-founder. Currently leading engineering at <a
+              href="https://cylinderhealth.com/"
+              target="_blank"
+              rel="nofollow noopener noreferrer">Cylinder Health</a>,
+            where I manage teams shipping member-facing products, drive DevOps
+            enablement, and architect scalable systems.
+          </p>
+          <p class="hero-sub animate-entrance delay-4">
+            From IC engineer to founder to engineering manager &mdash; I build
+            high-performing teams, own end-to-end product delivery, and keep my
+            hands on the keyboard.
           </p>
         </div>
 
-        <div class="card">
-          <div class="card-accent"></div>
-          <h3>Enablement & DevOps</h3>
-          <p>
-            I drive operational excellence through CI/CD improvements, developer
-            tooling, and infrastructure modernization. Recently led a major
-            mobile CI/CD migration to Expo Application Services.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="card-accent"></div>
-          <h3>Product & Architecture</h3>
-          <p>
-            I own the full delivery lifecycle. From member onboarding flows to
-            HIPAA-compliant AI features to company rebrands &mdash; I ship
-            cross-functional projects on time with quality.
-          </p>
+        <!-- Decorative dimension line -->
+        <div class="hero-dim animate-entrance delay-5">
+          <div class="dim-end-mark"></div>
+          <div class="dim-ruler"></div>
+          <span class="dim-section-label">Section 01</span>
+          <div class="dim-ruler"></div>
+          <div class="dim-end-mark"></div>
         </div>
       </section>
 
-      <section class="working-on reveal">
-        <h2>What I'm Working On</h2>
-        <div class="working-list reveal-stagger reveal">
-          <div class="work-item">
-            <span class="work-marker">&gt;</span>
-            <span>Leading the Member Experience squad: owning the full journey from registration to first appointment</span>
+      <!-- ======== DIMENSION LINE DIVIDER ======== -->
+      <div class="dimension-line reveal">
+        <div class="end-mark-left"></div>
+        <span class="dim-label">Core Capabilities</span>
+        <div class="end-mark-right"></div>
+      </div>
+
+      <!-- ======== VALUE PROPS — 3 CARDS ======== -->
+      <section class="capabilities">
+        <div class="reveal cap-annotation">
+          <div class="section-label">
+            <span class="section-label-text">What I Bring</span>
           </div>
-          <div class="work-item">
-            <span class="work-marker">&gt;</span>
-            <span>Overseeing all front-end engineering flows across the organization</span>
+        </div>
+
+        <div class="cards-grid">
+          <!-- Card 1: Team Builder -->
+          <div class="spec-card corner-fold card-item reveal" style="transition-delay: 0.1s;">
+            <div class="card-grid-overlay"></div>
+            <div class="pin"></div>
+            <span class="card-seq">01/03</span>
+            <div class="card-inner">
+              <div class="card-heading">
+                <div class="card-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                  </svg>
+                </div>
+                <h3>Team Builder</h3>
+              </div>
+              <p>
+                I hire, mentor, and grow engineering teams. Built my current team
+                from scratch, doubled its size, launched an internship program, and
+                promoted engineers into senior roles.
+              </p>
+            </div>
           </div>
-          <div class="work-item">
-            <span class="work-marker">&gt;</span>
-            <span>Driving CI/CD and DevOps enablement: recently migrated mobile app builds to Expo Application Services</span>
+
+          <!-- Card 2: Enablement & DevOps -->
+          <div class="spec-card corner-fold card-item reveal" style="transition-delay: 0.2s;">
+            <div class="card-grid-overlay"></div>
+            <div class="pin"></div>
+            <span class="card-seq">02/03</span>
+            <div class="card-inner">
+              <div class="card-heading">
+                <div class="card-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="16 18 22 12 16 6"/>
+                    <polyline points="8 6 2 12 8 18"/>
+                  </svg>
+                </div>
+                <h3>Enablement &amp; DevOps</h3>
+              </div>
+              <p>
+                I drive operational excellence through CI/CD improvements, developer
+                tooling, and infrastructure modernization. Recently led a major
+                mobile CI/CD migration to Expo Application Services.
+              </p>
+            </div>
           </div>
-          <div class="work-item">
-            <span class="work-marker">&gt;</span>
-            <span>Architecting HIPAA-compliant AI/LLM features with Firebase, Pub/Sub, Go, and React</span>
-          </div>
-          <div class="work-item">
-            <span class="work-marker">&gt;</span>
-            <span>Building engineering culture through community of practice initiatives and mentorship programs</span>
+
+          <!-- Card 3: Product & Architecture -->
+          <div class="spec-card corner-fold card-item reveal" style="transition-delay: 0.3s;">
+            <div class="card-grid-overlay"></div>
+            <div class="pin"></div>
+            <span class="card-seq">03/03</span>
+            <div class="card-inner">
+              <div class="card-heading">
+                <div class="card-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="7" height="7"/>
+                    <rect x="14" y="3" width="7" height="7"/>
+                    <rect x="3" y="14" width="7" height="7"/>
+                    <rect x="14" y="14" width="7" height="7"/>
+                  </svg>
+                </div>
+                <h3>Product &amp; Architecture</h3>
+              </div>
+              <p>
+                I own the full delivery lifecycle. From member onboarding flows to
+                HIPAA-compliant AI features to company rebrands &mdash; I ship
+                cross-functional projects on time with quality.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section class="snapshot reveal">
-        <h2>Experience Snapshot</h2>
-        <div class="snapshot-grid reveal-stagger reveal">
-          <div class="snapshot-item">
-            <span class="snapshot-number">20</span>
-            <span class="snapshot-label">Years in Tech</span>
-            <span class="snapshot-detail">TypeScript / React / Node.js / Go</span>
+      <!-- ======== DIMENSION LINE DIVIDER ======== -->
+      <div class="dimension-line reveal">
+        <div class="end-mark-left"></div>
+        <span class="dim-label">Active Projects</span>
+        <div class="end-mark-right"></div>
+      </div>
+
+      <!-- ======== WHAT I'M WORKING ON ======== -->
+      <section class="working-on">
+        <div class="crosshair working-crosshair" style="animation-delay: 0.8s;">
+          <div class="crosshair-circle"></div>
+        </div>
+
+        <div class="working-spec reveal">
+          <span class="rev-label">SPEC-002</span>
+        </div>
+
+        <div class="reveal working-annotation">
+          <div class="section-label">
+            <span class="section-label-text">What I'm Working On</span>
           </div>
-          <div class="snapshot-item">
-            <span class="snapshot-number">CTO</span>
-            <span class="snapshot-label">Former Co-Founder</span>
-            <span class="snapshot-detail">Built ML-powered platform from scratch</span>
+        </div>
+
+        <div class="spec-card working-card reveal">
+          <div class="card-grid-overlay"></div>
+          <div class="working-items">
+            <div class="work-item reveal" style="transition-delay: 0.1s;">
+              <p>
+                <span class="work-num">01</span>
+                Leading the Member Experience squad: owning the full journey from registration to first appointment
+              </p>
+            </div>
+            <div class="work-item reveal" style="transition-delay: 0.15s;">
+              <p>
+                <span class="work-num">02</span>
+                Overseeing all front-end engineering flows across the organization
+              </p>
+            </div>
+            <div class="work-item reveal" style="transition-delay: 0.2s;">
+              <p>
+                <span class="work-num">03</span>
+                Driving CI/CD and DevOps enablement: recently migrated mobile app builds to Expo Application Services
+              </p>
+            </div>
+            <div class="work-item reveal" style="transition-delay: 0.25s;">
+              <p>
+                <span class="work-num">04</span>
+                Architecting HIPAA-compliant AI/LLM features with Firebase, Pub/Sub, Go, and React
+              </p>
+            </div>
+            <div class="work-item reveal" style="transition-delay: 0.3s;">
+              <p>
+                <span class="work-num">05</span>
+                Building engineering culture through community of practice initiatives and mentorship programs
+              </p>
+            </div>
           </div>
-          <div class="snapshot-item">
-            <span class="snapshot-number">EM</span>
-            <span class="snapshot-label">Engineering Manager</span>
-            <span class="snapshot-detail">Leading teams at Series B startup</span>
+        </div>
+      </section>
+
+      <!-- ======== DIMENSION LINE DIVIDER ======== -->
+      <div class="dimension-line reveal">
+        <div class="end-mark-left"></div>
+        <span class="dim-label">Specifications</span>
+        <div class="end-mark-right"></div>
+      </div>
+
+      <!-- ======== EXPERIENCE SNAPSHOT ======== -->
+      <section class="snapshot">
+        <div class="crosshair snapshot-crosshair" style="animation-delay: 2s;">
+          <div class="crosshair-circle"></div>
+        </div>
+
+        <div class="snapshot-spec reveal">
+          <span class="rev-label">SPEC-003</span>
+        </div>
+
+        <div class="reveal snapshot-annotation">
+          <div class="section-label">
+            <span class="section-label-text">Experience Snapshot</span>
           </div>
-          <div class="snapshot-item">
-            <span class="snapshot-number">IC&rarr;L</span>
-            <span class="snapshot-label">Full Career Arc</span>
-            <span class="snapshot-detail">IC &rarr; Manager &rarr; Founder &rarr; Leader</span>
+        </div>
+
+        <div class="snapshot-grid">
+          <div class="spec-card snapshot-item reveal" style="transition-delay: 0.1s;">
+            <div class="card-grid-overlay"></div>
+            <div class="snapshot-inner">
+              <div class="spec-number">20</div>
+              <div class="snapshot-label">Years in Tech</div>
+              <div class="snapshot-divider"></div>
+              <div class="snapshot-detail">TypeScript / React<br>Node.js / Go</div>
+            </div>
+          </div>
+
+          <div class="spec-card snapshot-item reveal" style="transition-delay: 0.2s;">
+            <div class="card-grid-overlay"></div>
+            <div class="snapshot-inner">
+              <div class="spec-number">CTO</div>
+              <div class="snapshot-label">Former Co-Founder</div>
+              <div class="snapshot-divider"></div>
+              <div class="snapshot-detail">Built ML-powered<br>platform from scratch</div>
+            </div>
+          </div>
+
+          <div class="spec-card snapshot-item reveal" style="transition-delay: 0.3s;">
+            <div class="card-grid-overlay"></div>
+            <div class="snapshot-inner">
+              <div class="spec-number">EM</div>
+              <div class="snapshot-label">Engineering Manager</div>
+              <div class="snapshot-divider"></div>
+              <div class="snapshot-detail">Leading teams at<br>Series B startup</div>
+            </div>
+          </div>
+
+          <div class="spec-card snapshot-item reveal" style="transition-delay: 0.4s;">
+            <div class="card-grid-overlay"></div>
+            <div class="snapshot-inner">
+              <div class="spec-number">IC&rarr;L</div>
+              <div class="snapshot-label">Full Career Arc</div>
+              <div class="snapshot-divider"></div>
+              <div class="snapshot-detail">IC &rarr; Manager<br>&rarr; Founder &rarr; Leader</div>
+            </div>
           </div>
         </div>
       </section>
@@ -120,50 +294,110 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
   </body>
 </html>
 
+<script is:inline>
+  // Add subtle parallax to crosshairs on mouse move (desktop only)
+  function initParallax() {
+    if (window.matchMedia('(min-width: 1024px)').matches) {
+      var crosshairs = document.querySelectorAll('.crosshair');
+      document.addEventListener('mousemove', function(e) {
+        var x = (e.clientX / window.innerWidth - 0.5) * 8;
+        var y = (e.clientY / window.innerHeight - 0.5) * 8;
+        crosshairs.forEach(function(ch, i) {
+          var factor = i % 2 === 0 ? 1 : -1;
+          ch.style.transform = 'translate(' + (x * factor) + 'px, ' + (y * factor) + 'px)';
+        });
+      });
+    }
+  }
+  document.addEventListener('astro:page-load', initParallax);
+  initParallax();
+</script>
+
 <style>
   main {
-    max-width: 800px;
+    max-width: 1152px;
+    width: 100%;
+    padding: 2em 1rem;
   }
 
-  /* Hero */
+  @media (min-width: 640px) {
+    main {
+      padding: 2em 1.5rem;
+    }
+  }
+
+  /* ---- HERO ---- */
   .hero {
-    padding: 2em 0 3em;
-    animation: fadeIn 0.6s var(--ease-out) both;
+    position: relative;
+    padding: 3em 0 4em;
+    animation: fadeIn 0.6s ease-out both;
   }
 
-  .hero-label {
+  .hero-crosshair-tl {
+    top: 0;
+    left: -40px;
+    display: none;
+  }
+
+  .hero-crosshair-br {
+    bottom: 0;
+    right: -40px;
+    display: none;
+  }
+
+  .hero-spec {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .hero-annotation {
+    margin-bottom: 1.5em;
+  }
+
+  .section-label-text {
     font-family: var(--font-mono);
-    font-size: 0.75em;
-    letter-spacing: 0.1em;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--accent);
-    margin-bottom: 1em;
+    font-weight: 500;
+    padding-left: 0.5rem;
   }
 
   .hero-title {
-    font-size: 3.5rem;
-    font-weight: 800;
+    font-family: var(--font-mono);
+    font-size: 2.5rem;
+    font-weight: 700;
     letter-spacing: -0.04em;
-    margin-bottom: 0.6em;
-    line-height: 1.05;
+    line-height: 1.1;
+    margin-bottom: 1.5em;
+    color: var(--text);
   }
 
-  .cursor {
+  .hero-name {
+    color: var(--accent);
+    position: relative;
     display: inline-block;
-    width: 3px;
-    height: 0.85em;
-    background: var(--accent);
-    margin-left: 4px;
-    vertical-align: baseline;
-    animation: cursor-blink 1s steps(1) infinite;
+  }
+
+  .hero-underline {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+  }
+
+  .hero-body {
+    max-width: 680px;
   }
 
   .hero-intro {
+    font-family: var(--font-serif);
     font-size: 1.15em;
     line-height: 1.7;
     color: var(--text-secondary);
     margin-bottom: 1em;
-    max-width: 640px;
   }
 
   .hero-intro a {
@@ -178,195 +412,340 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
   }
 
   .hero-sub {
+    font-family: var(--font-serif);
     font-size: 1em;
+    line-height: 1.7;
     color: var(--text-muted);
-    max-width: 580px;
   }
 
-  /* Cards */
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25em;
-    margin-bottom: 4em;
+  .hero-dim {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    max-width: 280px;
+    margin-top: 3em;
   }
 
-  .card {
+  .dim-end-mark {
+    width: 1px;
+    height: 12px;
+    background: rgba(27, 42, 74, 0.3);
+  }
+
+  .dim-ruler {
+    flex: 1;
+    height: 1px;
+    background: rgba(27, 42, 74, 0.3);
+  }
+
+  .dim-section-label {
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(27, 42, 74, 0.3);
+    white-space: nowrap;
+  }
+
+  /* ---- CAPABILITY CARDS ---- */
+  .capabilities {
     position: relative;
-    padding: 1.75em 1.5em;
-    background: var(--bg-surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-    transition: all var(--transition);
+    padding: 3em 0 4em;
   }
 
-  .card:hover {
-    border-color: var(--border-hover);
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md), var(--shadow-glow);
-    background: var(--bg-surface-hover);
+  .cap-annotation {
+    margin-bottom: 2em;
   }
 
-  .card-accent {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, var(--accent), var(--accent-bright), transparent);
-    transition: width 0.5s var(--ease-out);
+  .cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5em;
   }
 
-  .card:hover .card-accent {
-    width: 100%;
+  .card-item {
+    padding: 1.5em 1.25em 1.5em 1.25em;
+    padding-top: 2em;
   }
 
-  .card h3 {
-    font-size: 1.05em;
-    font-weight: 700;
+  .card-inner {
+    position: relative;
+    z-index: 10;
+  }
+
+  .card-heading {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
     margin-bottom: 0.75em;
+    margin-top: 0.5em;
+  }
+
+  .card-icon {
+    width: 24px;
+    height: 24px;
+    border: 1px solid var(--accent);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .card-item h3 {
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
     color: var(--text);
-    transition: color var(--transition-fast);
+    margin: 0;
   }
 
-  .card:hover h3 {
-    color: var(--accent);
-  }
-
-  .card p {
-    font-size: 0.9em;
+  .card-item p {
+    font-family: var(--font-serif);
+    font-size: 0.95em;
     line-height: 1.65;
     color: var(--text-secondary);
     margin: 0;
   }
 
-  /* Working On */
+  /* ---- WORKING ON ---- */
   .working-on {
-    margin-bottom: 4em;
+    position: relative;
+    padding: 3em 0 4em;
   }
 
-  .working-on h2 {
-    margin-bottom: 1.25em;
+  .working-crosshair {
+    top: 20px;
+    right: -40px;
+    display: none;
   }
 
-  .working-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+  .working-spec {
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 
-  .work-item {
-    display: flex;
-    gap: 1em;
-    padding: 0.85em 0;
-    padding-left: 0;
-    border-bottom: 1px solid var(--border);
-    font-size: 0.95em;
-    color: var(--text-secondary);
-    transition: all var(--transition-fast);
-  }
-
-  .work-item:first-child {
-    border-top: 1px solid var(--border);
-  }
-
-  .work-item:hover {
-    color: var(--text);
-    padding-left: 0.5em;
-    background: linear-gradient(90deg, var(--accent-glow), transparent 50%);
-  }
-
-  .work-marker {
-    font-family: var(--font-mono);
-    color: var(--accent);
-    font-weight: 600;
-    flex-shrink: 0;
-    transition: transform var(--transition-fast);
-  }
-
-  .work-item:hover .work-marker {
-    transform: translateX(3px);
-  }
-
-  /* Snapshot */
-  .snapshot {
+  .working-annotation {
     margin-bottom: 2em;
   }
 
-  .snapshot h2 {
-    margin-bottom: 1.25em;
+  .working-card {
+    padding: 1.5em;
+  }
+
+  .working-items {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25em;
+  }
+
+  .work-item {
+    position: relative;
+    padding-left: 2rem;
+    transition: all 0.2s ease;
+  }
+
+  .work-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.65em;
+    width: 8px;
+    height: 8px;
+    border: 1.5px solid var(--accent);
+    transform: rotate(45deg);
+    transition: all 0.2s ease;
+  }
+
+  .work-item:hover::before {
+    background: var(--accent);
+  }
+
+  .work-item:hover {
+    padding-left: 2.5rem;
+  }
+
+  .work-item::after {
+    content: '';
+    position: absolute;
+    left: 12px;
+    top: calc(0.65em + 4px);
+    width: 1rem;
+    height: 1px;
+    background: var(--line);
+  }
+
+  .work-item p {
+    font-family: var(--font-serif);
+    font-size: 1em;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    margin: 0;
+  }
+
+  .work-num {
+    font-family: var(--font-mono);
+    font-size: 0.75em;
+    color: var(--accent);
+    font-weight: 600;
+    margin-right: 0.5em;
+  }
+
+  /* ---- SNAPSHOT ---- */
+  .snapshot {
+    position: relative;
+    padding: 3em 0 2em;
+  }
+
+  .snapshot-crosshair {
+    top: 20px;
+    left: -40px;
+    display: none;
+  }
+
+  .snapshot-spec {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .snapshot-annotation {
+    margin-bottom: 2em;
   }
 
   .snapshot-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
     gap: 1em;
   }
 
   .snapshot-item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25em;
-    padding: 1.5em;
-    background: var(--bg-surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    transition: all var(--transition);
+    padding: 1.25em;
+    text-align: center;
   }
 
-  .snapshot-item:hover {
-    border-color: var(--border-hover);
-    box-shadow: var(--shadow-sm);
-    background: var(--bg-surface-hover);
+  .snapshot-inner {
+    position: relative;
+    z-index: 10;
   }
 
-  .snapshot-number {
-    font-family: var(--font-heading);
-    font-size: 1.75em;
-    font-weight: 800;
+  .spec-number {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 2.5em;
+    line-height: 1;
     color: var(--accent);
-    line-height: 1.1;
-    letter-spacing: -0.03em;
-    transition: transform var(--transition-fast);
-  }
-
-  .snapshot-item:hover .snapshot-number {
-    transform: scale(1.08);
-    transform-origin: left;
+    margin-bottom: 0.15em;
   }
 
   .snapshot-label {
-    font-family: var(--font-heading);
-    font-size: 0.95em;
+    font-family: var(--font-mono);
+    font-size: 0.72em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     font-weight: 600;
     color: var(--text);
+    margin-bottom: 0.5em;
+  }
+
+  .snapshot-divider {
+    width: 32px;
+    height: 1px;
+    background: var(--accent);
+    margin: 0 auto 0.5em;
   }
 
   .snapshot-detail {
     font-family: var(--font-mono);
-    font-size: 0.7em;
+    font-size: 0.6rem;
     color: var(--text-muted);
-    letter-spacing: 0.02em;
+    letter-spacing: 0.04em;
+    line-height: 1.6;
   }
 
-  /* Responsive */
-  @media (max-width: 720px) {
+  /* ---- RESPONSIVE ---- */
+  @media (min-width: 640px) {
     .hero-title {
-      font-size: 2.5rem;
+      font-size: 3rem;
     }
 
     .hero-intro {
+      font-size: 1.2em;
+    }
+
+    .working-card {
+      padding: 2em;
+    }
+
+    .work-item p {
       font-size: 1.05em;
     }
 
-    .cards {
-      grid-template-columns: 1fr;
-      gap: 1em;
+    .snapshot-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .snapshot-item {
+      padding: 1.5em;
+    }
+
+    .spec-number {
+      font-size: 3em;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .cards-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .card-item {
+      padding: 1.5em;
+      padding-top: 2em;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero {
+      padding: 5em 0 6em;
+    }
+
+    .hero-title {
+      font-size: 4rem;
+    }
+
+    .hero-crosshair-tl,
+    .hero-crosshair-br,
+    .working-crosshair,
+    .snapshot-crosshair {
+      display: block;
+    }
+
+    .snapshot-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .spec-number {
+      font-size: 3.5em;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-title {
+      font-size: 2rem;
     }
 
     .snapshot-grid {
       grid-template-columns: 1fr;
+    }
+
+    .spec-number {
+      font-size: 2.5em;
     }
   }
 </style>

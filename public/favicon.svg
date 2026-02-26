@@ -1,11 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
-  <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0c1017"/>
-      <stop offset="100%" stop-color="#141922"/>
-    </linearGradient>
-  </defs>
-  <rect width="200" height="200" rx="32" fill="url(#bg)"/>
-  <rect x="8" y="8" width="184" height="184" rx="24" fill="none" stroke="#c8a24e" stroke-width="2" opacity="0.3"/>
-  <text x="100" y="128" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="90" fill="#c8a24e" letter-spacing="-4">JB</text>
+  <!-- Blueprint background -->
+  <rect width="200" height="200" rx="4" fill="#EDF2FA"/>
+  <!-- Grid lines -->
+  <line x1="0" y1="50" x2="200" y2="50" stroke="#C0D0E8" stroke-width="0.5"/>
+  <line x1="0" y1="100" x2="200" y2="100" stroke="#C0D0E8" stroke-width="0.5"/>
+  <line x1="0" y1="150" x2="200" y2="150" stroke="#C0D0E8" stroke-width="0.5"/>
+  <line x1="50" y1="0" x2="50" y2="200" stroke="#C0D0E8" stroke-width="0.5"/>
+  <line x1="100" y1="0" x2="100" y2="200" stroke="#C0D0E8" stroke-width="0.5"/>
+  <line x1="150" y1="0" x2="150" y2="200" stroke="#C0D0E8" stroke-width="0.5"/>
+  <!-- Border -->
+  <rect x="12" y="12" width="176" height="176" rx="2" fill="none" stroke="#1B2A4A" stroke-width="3"/>
+  <!-- Red accent dot -->
+  <circle cx="176" cy="24" r="8" fill="#E63946"/>
+  <!-- JB text -->
+  <text x="100" y="128" text-anchor="middle" font-family="monospace" font-weight="700" font-size="88" fill="#E63946" letter-spacing="-4">JB</text>
 </svg>

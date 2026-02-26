@@ -17,24 +17,44 @@ const isActive = href === pathname || href === '/' + (subpath?.[0] || '');
 	a {
 		display: inline-block;
 		font-family: var(--font-mono);
-		font-size: 0.75em;
+		font-size: 0.7em;
 		font-weight: 500;
-		letter-spacing: 0.04em;
+		letter-spacing: 0.1em;
 		text-transform: uppercase;
 		text-decoration: none;
 		color: var(--text-muted);
-		padding: 0.5em 0.75em;
-		border-radius: 6px;
+		padding: 0.4em 0.65em;
+		border-radius: 3px;
 		transition: all var(--transition-fast);
+		position: relative;
+	}
+
+	a::after {
+		content: '';
+		position: absolute;
+		bottom: 2px;
+		left: 50%;
+		width: 0;
+		height: 1px;
+		background: var(--accent);
+		transition: all 0.3s ease;
+		transform: translateX(-50%);
+	}
+
+	a:hover::after {
+		width: 60%;
 	}
 
 	a:hover {
-		color: var(--text);
-		background: var(--bg-surface);
+		color: var(--accent);
 	}
 
 	a.active {
-		color: var(--accent);
-		background: var(--accent-glow);
+		color: var(--text);
+		font-weight: 600;
+	}
+
+	a.active::after {
+		width: 60%;
 	}
 </style>
