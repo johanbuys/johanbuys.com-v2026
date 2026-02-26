@@ -15,72 +15,129 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 	<head>
 		<BaseHead title={title} description={description} />
 		<style>
+			.reading-progress {
+				position: fixed;
+				top: 0;
+				left: 0;
+				height: 2px;
+				width: 0%;
+				background: linear-gradient(90deg, var(--accent), var(--accent-bright));
+				z-index: 200;
+				transition: width 0.1s linear;
+				box-shadow: 0 0 8px var(--accent-glow);
+			}
+
 			main {
 				width: calc(100% - 2em);
 				max-width: 100%;
 				margin: 0;
 			}
+
 			.hero-image {
 				width: 100%;
+				max-width: 960px;
+				margin: 0 auto;
+				padding: 0 1em;
 			}
+
 			.hero-image img {
 				display: block;
-				margin: 0 auto;
+				width: 100%;
 				border-radius: 12px;
-				box-shadow: var(--box-shadow);
+				border: 1px solid var(--border);
+				transition: border-color var(--transition);
 			}
+
+			.hero-image img:hover {
+				border-color: var(--border-hover);
+			}
+
 			.prose {
 				width: 720px;
 				max-width: calc(100% - 2em);
 				margin: auto;
 				padding: 1em;
-				color: rgb(var(--gray-dark));
 			}
-			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
+
+			.article-header {
+				margin-bottom: 2.5em;
+				padding: 2em 0 1.5em;
+				border-bottom: 1px solid var(--border);
 			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
+
+			.article-header h1 {
+				font-size: 2.5em;
+				line-height: 1.12;
+				letter-spacing: -0.03em;
+				margin: 0.5em 0 0;
 			}
-			.date {
-				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
+
+			.date-info {
+				font-family: var(--font-mono);
+				font-size: 0.72em;
+				letter-spacing: 0.06em;
+				text-transform: uppercase;
+				color: var(--text-muted);
+				display: flex;
+				align-items: center;
+				gap: 1em;
 			}
-			.last-updated-on {
-				font-style: italic;
+
+			.last-updated {
+				color: var(--text-muted);
+				opacity: 0.7;
+			}
+
+			@media (max-width: 720px) {
+				.article-header h1 {
+					font-size: 1.8em;
+				}
 			}
 		</style>
 	</head>
 
 	<body>
+		<div class="reading-progress" id="reading-progress"></div>
 		<Header />
 		<main>
 			<article>
-				<div class="hero-image">
+				<div class="hero-image" style="animation: fadeIn 0.5s var(--ease-out) both;">
 					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
 				</div>
 				<div class="prose">
-					<div class="title">
-						<div class="date">
+					<div class="article-header" style="animation: fadeInUp 0.5s var(--ease-out) 0.15s both;">
+						<div class="date-info">
 							<FormattedDate date={pubDate} />
 							{
 								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
+									<span class="last-updated">
+										Updated <FormattedDate date={updatedDate} />
+									</span>
 								)
 							}
 						</div>
 						<h1>{title}</h1>
-						<hr />
 					</div>
 					<slot />
 				</div>
 			</article>
 		</main>
 		<Footer />
+
+		<script is:inline>
+			function initProgress() {
+				var bar = document.getElementById('reading-progress');
+				if (!bar) return;
+				function update() {
+					var h = document.documentElement.scrollHeight - window.innerHeight;
+					var pct = h > 0 ? (window.scrollY / h) * 100 : 0;
+					bar.style.width = pct + '%';
+				}
+				window.addEventListener('scroll', update, { passive: true });
+				update();
+			}
+			document.addEventListener('astro:page-load', initProgress);
+			initProgress();
+		</script>
 	</body>
 </html>

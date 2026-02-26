@@ -13,26 +13,28 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
   <body>
     <Header />
     <main>
-      <h1 class="header">Hi, I'm Johan</h1>
-      <h2 class="sub-header">
-        Engineering leader with 20 years in tech. Former CTO & technical
-        co-founder. Currently leading engineering at <a
-          href="https://cylinderhealth.com/"
-          target="_blank"
-          rel="nofollow noopener noreferrer">Cylinder Health</a
-        >, where I manage teams shipping member-facing products, drive DevOps
-        enablement, and architect scalable systems.
-      </h2>
-      <p>
-        From IC engineer to founder to engineering manager. I build
-        high-performing teams, own end-to-end product delivery, and keep my
-        hands on the keyboard. I care about developer experience, operational
-        excellence, and shipping things that improve people's lives.
-      </p>
+      <section class="hero">
+        <p class="hero-label">Engineering Leader &middot; Builder &middot; Maker</p>
+        <h1 class="hero-title">Hi, I'm Johan<span class="cursor"></span></h1>
+        <p class="hero-intro">
+          Engineering leader with 20 years in tech. Former CTO & technical
+          co-founder. Currently leading engineering at <a
+            href="https://cylinderhealth.com/"
+            target="_blank"
+            rel="nofollow noopener noreferrer">Cylinder Health</a
+          >, where I manage teams shipping member-facing products, drive DevOps
+          enablement, and architect scalable systems.
+        </p>
+        <p class="hero-sub">
+          From IC engineer to founder to engineering manager &mdash; I build
+          high-performing teams, own end-to-end product delivery, and keep my
+          hands on the keyboard.
+        </p>
+      </section>
 
-      <section class="value-props">
-        <div class="prop-card">
-          <div class="prop-icon">🚀</div>
+      <section class="cards reveal-stagger reveal">
+        <div class="card">
+          <div class="card-accent"></div>
           <h3>Team Builder</h3>
           <p>
             I hire, mentor, and grow engineering teams. Built my current team
@@ -41,9 +43,9 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
           </p>
         </div>
 
-        <div class="prop-card">
-          <div class="prop-icon">🏗️</div>
-          <h3>Enablement &amp; DevOps</h3>
+        <div class="card">
+          <div class="card-accent"></div>
+          <h3>Enablement & DevOps</h3>
           <p>
             I drive operational excellence through CI/CD improvements, developer
             tooling, and infrastructure modernization. Recently led a major
@@ -51,47 +53,65 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
           </p>
         </div>
 
-        <div class="prop-card">
-          <div class="prop-icon">📈</div>
-          <h3>Product &amp; Architecture</h3>
+        <div class="card">
+          <div class="card-accent"></div>
+          <h3>Product & Architecture</h3>
           <p>
             I own the full delivery lifecycle. From member onboarding flows to
-            HIPAA-compliant AI features to company rebrands, I ship
+            HIPAA-compliant AI features to company rebrands &mdash; I ship
             cross-functional projects on time with quality.
           </p>
         </div>
       </section>
 
-      <section class="working-on">
+      <section class="working-on reveal">
         <h2>What I'm Working On</h2>
-        <p>Currently I'm:</p>
-        <ul>
-          <li>Leading the Member Experience squad: owning the full journey from registration to first appointment</li>
-          <li>Overseeing all front-end engineering flows across the organization</li>
-          <li>Driving CI/CD and DevOps enablement: recently migrated mobile app builds to Expo Application Services</li>
-          <li>Architecting HIPAA-compliant AI/LLM features with Firebase, Pub/Sub, Go, and React</li>
-          <li>Building engineering culture through community of practice initiatives and mentorship programs</li>
-        </ul>
+        <div class="working-list reveal-stagger reveal">
+          <div class="work-item">
+            <span class="work-marker">&gt;</span>
+            <span>Leading the Member Experience squad: owning the full journey from registration to first appointment</span>
+          </div>
+          <div class="work-item">
+            <span class="work-marker">&gt;</span>
+            <span>Overseeing all front-end engineering flows across the organization</span>
+          </div>
+          <div class="work-item">
+            <span class="work-marker">&gt;</span>
+            <span>Driving CI/CD and DevOps enablement: recently migrated mobile app builds to Expo Application Services</span>
+          </div>
+          <div class="work-item">
+            <span class="work-marker">&gt;</span>
+            <span>Architecting HIPAA-compliant AI/LLM features with Firebase, Pub/Sub, Go, and React</span>
+          </div>
+          <div class="work-item">
+            <span class="work-marker">&gt;</span>
+            <span>Building engineering culture through community of practice initiatives and mentorship programs</span>
+          </div>
+        </div>
       </section>
 
-      <section class="experience-snapshot">
+      <section class="snapshot reveal">
         <h2>Experience Snapshot</h2>
-        <div class="snapshot-grid">
+        <div class="snapshot-grid reveal-stagger reveal">
           <div class="snapshot-item">
-            <strong>20 Years in Tech</strong>
-            <span>TypeScript/React/Node.js/Go Expert</span>
+            <span class="snapshot-number">20</span>
+            <span class="snapshot-label">Years in Tech</span>
+            <span class="snapshot-detail">TypeScript / React / Node.js / Go</span>
           </div>
           <div class="snapshot-item">
-            <strong>Former CTO & Co-Founder</strong>
-            <span>Built ML-powered platform from scratch</span>
+            <span class="snapshot-number">CTO</span>
+            <span class="snapshot-label">Former Co-Founder</span>
+            <span class="snapshot-detail">Built ML-powered platform from scratch</span>
           </div>
           <div class="snapshot-item">
-            <strong>Engineering Manager</strong>
-            <span>Leading teams at Series B startup</span>
+            <span class="snapshot-number">EM</span>
+            <span class="snapshot-label">Engineering Manager</span>
+            <span class="snapshot-detail">Leading teams at Series B startup</span>
           </div>
           <div class="snapshot-item">
-            <strong>Full-Stack Engineer</strong>
-            <span>IC → Manager → Founder → Leader</span>
+            <span class="snapshot-number">IC&rarr;L</span>
+            <span class="snapshot-label">Full Career Arc</span>
+            <span class="snapshot-detail">IC &rarr; Manager &rarr; Founder &rarr; Leader</span>
           </div>
         </div>
       </section>
@@ -101,174 +121,252 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 </html>
 
 <style>
-  .header {
-    font-size: 2.5rem;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-    color: rgb(var(--accent-dark));
+  main {
+    max-width: 800px;
   }
 
-  .sub-header {
-    font-size: 1.25rem;
-    font-weight: 400;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-    color: rgb(var(--gray-dark));
+  /* Hero */
+  .hero {
+    padding: 2em 0 3em;
+    animation: fadeIn 0.6s var(--ease-out) both;
   }
 
-  .sub-header a {
-    color: rgb(var(--accent));
+  .hero-label {
+    font-family: var(--font-mono);
+    font-size: 0.75em;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1em;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    margin-bottom: 0.6em;
+    line-height: 1.05;
+  }
+
+  .cursor {
+    display: inline-block;
+    width: 3px;
+    height: 0.85em;
+    background: var(--accent);
+    margin-left: 4px;
+    vertical-align: baseline;
+    animation: cursor-blink 1s steps(1) infinite;
+  }
+
+  .hero-intro {
+    font-size: 1.15em;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 1em;
+    max-width: 640px;
+  }
+
+  .hero-intro a {
+    color: var(--accent);
     text-decoration: none;
-    font-weight: 500;
+    border-bottom: 1px solid var(--accent-glow-strong);
+    transition: border-color var(--transition-fast);
   }
 
-  .sub-header a:hover {
-    text-decoration: underline;
+  .hero-intro a:hover {
+    border-bottom-color: var(--accent);
   }
 
-  /* Value Props Section */
-  .value-props {
+  .hero-sub {
+    font-size: 1em;
+    color: var(--text-muted);
+    max-width: 580px;
+  }
+
+  /* Cards */
+  .cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin: 3rem 0;
+    gap: 1.25em;
+    margin-bottom: 4em;
   }
 
-  .prop-card {
-    padding: 1.5rem;
-    border: 1px solid rgb(var(--gray-light));
-    border-radius: 8px;
-    background: rgb(var(--gray-light));
-    transition:
-      transform 0.2s ease,
-      box-shadow 0.2s ease;
+  .card {
+    position: relative;
+    padding: 1.75em 1.5em;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all var(--transition);
   }
 
-  .prop-card:hover {
+  .card:hover {
+    border-color: var(--border-hover);
     transform: translateY(-4px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-md), var(--shadow-glow);
+    background: var(--bg-surface-hover);
   }
 
-  .prop-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    line-height: 1;
+  .card-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-bright), transparent);
+    transition: width 0.5s var(--ease-out);
   }
 
-  .prop-card h3 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-    color: rgb(var(--accent-dark));
+  .card:hover .card-accent {
+    width: 100%;
   }
 
-  .prop-card p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: rgb(var(--gray-dark));
+  .card h3 {
+    font-size: 1.05em;
+    font-weight: 700;
+    margin-bottom: 0.75em;
+    color: var(--text);
+    transition: color var(--transition-fast);
+  }
+
+  .card:hover h3 {
+    color: var(--accent);
+  }
+
+  .card p {
+    font-size: 0.9em;
+    line-height: 1.65;
+    color: var(--text-secondary);
     margin: 0;
   }
 
-  /* Working On Section */
+  /* Working On */
   .working-on {
-    margin: 3rem 0;
+    margin-bottom: 4em;
   }
 
   .working-on h2 {
-    font-size: 1.75rem;
+    margin-bottom: 1.25em;
+  }
+
+  .working-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .work-item {
+    display: flex;
+    gap: 1em;
+    padding: 0.85em 0;
+    padding-left: 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.95em;
+    color: var(--text-secondary);
+    transition: all var(--transition-fast);
+  }
+
+  .work-item:first-child {
+    border-top: 1px solid var(--border);
+  }
+
+  .work-item:hover {
+    color: var(--text);
+    padding-left: 0.5em;
+    background: linear-gradient(90deg, var(--accent-glow), transparent 50%);
+  }
+
+  .work-marker {
+    font-family: var(--font-mono);
+    color: var(--accent);
     font-weight: 600;
-    margin-bottom: 1rem;
-    color: rgb(var(--accent-dark));
+    flex-shrink: 0;
+    transition: transform var(--transition-fast);
   }
 
-  .working-on p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    color: rgb(var(--gray-dark));
+  .work-item:hover .work-marker {
+    transform: translateX(3px);
   }
 
-  .working-on ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  /* Snapshot */
+  .snapshot {
+    margin-bottom: 2em;
   }
 
-  .working-on li {
-    padding-left: 1.5rem;
-    margin-bottom: 0.75rem;
-    position: relative;
-    color: rgb(var(--gray-dark));
-  }
-
-  .working-on li:before {
-    content: "→";
-    position: absolute;
-    left: 0;
-    color: rgb(var(--accent));
-    font-weight: bold;
-  }
-
-  /* Experience Snapshot Section */
-  .experience-snapshot {
-    margin: 3rem 0;
-  }
-
-  .experience-snapshot h2 {
-    font-size: 1.75rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    color: rgb(var(--accent-dark));
+  .snapshot h2 {
+    margin-bottom: 1.25em;
   }
 
   .snapshot-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+    gap: 1em;
   }
 
   .snapshot-item {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    padding: 1.25rem;
-    border-left: 3px solid rgb(var(--accent));
-    background: rgb(var(--gray-light));
-    border-radius: 4px;
+    gap: 0.25em;
+    padding: 1.5em;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    transition: all var(--transition);
   }
 
-  .snapshot-item strong {
-    font-size: 1.1rem;
+  .snapshot-item:hover {
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-sm);
+    background: var(--bg-surface-hover);
+  }
+
+  .snapshot-number {
+    font-family: var(--font-heading);
+    font-size: 1.75em;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    transition: transform var(--transition-fast);
+  }
+
+  .snapshot-item:hover .snapshot-number {
+    transform: scale(1.08);
+    transform-origin: left;
+  }
+
+  .snapshot-label {
+    font-family: var(--font-heading);
+    font-size: 0.95em;
     font-weight: 600;
-    color: rgb(var(--accent-dark));
+    color: var(--text);
   }
 
-  .snapshot-item span {
-    font-size: 0.9rem;
-    color: rgb(var(--gray-dark));
+  .snapshot-detail {
+    font-family: var(--font-mono);
+    font-size: 0.7em;
+    color: var(--text-muted);
+    letter-spacing: 0.02em;
   }
 
+  /* Responsive */
   @media (max-width: 720px) {
-    .header {
-      font-size: 2rem;
+    .hero-title {
+      font-size: 2.5rem;
     }
 
-    .sub-header {
-      font-size: 1.1rem;
+    .hero-intro {
+      font-size: 1.05em;
     }
 
-    .value-props {
+    .cards {
       grid-template-columns: 1fr;
-      gap: 1.5rem;
+      gap: 1em;
     }
 
     .snapshot-grid {
       grid-template-columns: 1fr;
-      gap: 1rem;
-    }
-
-    .prop-icon {
-      font-size: 2rem;
     }
   }
 </style>
