@@ -1,0 +1,773 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import { SITE_TITLE } from "../consts";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={`The Blueprint | ${SITE_TITLE}`} description="A technical drawing of 20 years in engineering. From IC engineer to founder to engineering manager." />
+  </head>
+  <body>
+    <Header />
+    <main>
+
+      <!-- ======== PAGE HEADER ======== -->
+      <section class="page-header">
+        <div class="crosshair header-crosshair-tl">
+          <div class="crosshair-circle"></div>
+        </div>
+        <div class="crosshair header-crosshair-br" style="animation-delay: 1.5s;">
+          <div class="crosshair-circle"></div>
+        </div>
+
+        <div class="header-spec animate-entrance delay-3">
+          <span class="rev-label">SPEC-JOURNEY-001</span>
+        </div>
+
+        <div class="animate-entrance delay-1 header-annotation">
+          <div class="section-label">
+            <span class="section-label-text">Career Blueprint</span>
+          </div>
+        </div>
+
+        <h1 class="page-title animate-entrance delay-2">The Blueprint</h1>
+        <p class="page-subtitle animate-entrance delay-3">A technical drawing of 20 years in engineering.</p>
+
+        <div class="header-dim animate-entrance delay-5">
+          <div class="dim-end-mark"></div>
+          <div class="dim-ruler"></div>
+          <span class="dim-section-label">Timeline</span>
+          <div class="dim-ruler"></div>
+          <div class="dim-end-mark"></div>
+        </div>
+      </section>
+
+      <!-- ======== TIMELINE ======== -->
+      <section class="timeline-container" id="timeline-container">
+
+        <!-- Horizontal SVG timeline path (desktop only) -->
+        <svg class="timeline-svg" preserveAspectRatio="none" aria-hidden="true">
+          <path class="timeline-path" d="M 0 2 L 2000 2" />
+        </svg>
+
+        <div class="phases">
+
+          <!-- ======== PHASE 1: IC Engineer (above) ======== -->
+          <div class="phase phase-odd reveal" style="transition-delay: 0.1s;">
+            <div class="phase-card-wrapper">
+              <div class="spec-card corner-fold phase-card reveal" style="transition-delay: 0.15s;">
+                <div class="card-grid-overlay"></div>
+                <div class="pin"></div>
+                <span class="card-seq">SPEC-IC-001</span>
+                <div class="phase-card-inner">
+                  <div class="phase-stat">
+                    <div class="spec-number">10</div>
+                    <div class="phase-stat-label">Years as IC</div>
+                  </div>
+                  <div class="phase-stat-divider"></div>
+                  <h3>Full-Stack Engineer</h3>
+                  <div class="phase-context">Building foundations across the entire stack</div>
+                  <p class="phase-desc">Nearly a decade honing craft from databases to frontend. Computer Science degree, Golden Key International Honor Society. Driven by curiosity and a love for building things that work.</p>
+                  <div class="phase-tech">
+                    <span class="tech-item">JavaScript</span>
+                    <span class="tech-item">Python</span>
+                    <span class="tech-item">SQL</span>
+                    <span class="tech-item">Linux</span>
+                    <span class="tech-item">Full-Stack</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="leader leader-down"></div>
+            <div class="phase-node">
+              <div class="crosshair">
+                <div class="crosshair-circle"></div>
+              </div>
+              <div class="phase-year">2005&ndash;2015</div>
+            </div>
+          </div>
+
+          <!-- ======== PHASE 2: CTO (below) ======== -->
+          <div class="phase phase-even reveal" style="transition-delay: 0.2s;">
+            <div class="phase-node">
+              <div class="crosshair" style="animation-delay: 0.5s;">
+                <div class="crosshair-circle"></div>
+              </div>
+              <div class="phase-year">2015&ndash;2020</div>
+            </div>
+            <div class="leader leader-up"></div>
+            <div class="phase-card-wrapper">
+              <div class="spec-card corner-fold phase-card reveal" style="transition-delay: 0.25s;">
+                <div class="card-grid-overlay"></div>
+                <div class="pin"></div>
+                <span class="card-seq">SPEC-CTO-001</span>
+                <div class="phase-card-inner">
+                  <div class="phase-stat">
+                    <div class="spec-number">CTO</div>
+                    <div class="phase-stat-label">From Zero to Product</div>
+                  </div>
+                  <div class="phase-stat-divider"></div>
+                  <h3>Technical Co-Founder &amp; CTO</h3>
+                  <div class="phase-context">ML-powered computer vision startup</div>
+                  <p class="phase-desc">Just me and the CEO, building an ML-powered computer vision platform for the hospitality industry. Architected the entire system, made every technical decision. COVID ended the company, but the experience was invaluable.</p>
+                  <div class="phase-tech">
+                    <span class="tech-item">Python</span>
+                    <span class="tech-item">ML/CV</span>
+                    <span class="tech-item">AWS</span>
+                    <span class="tech-item">React</span>
+                    <span class="tech-item">Architecture</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ======== PHASE 3: EM (above) ======== -->
+          <div class="phase phase-odd reveal" style="transition-delay: 0.3s;">
+            <div class="phase-card-wrapper">
+              <div class="spec-card corner-fold phase-card reveal" style="transition-delay: 0.35s;">
+                <div class="card-grid-overlay"></div>
+                <div class="pin"></div>
+                <span class="card-seq">SPEC-EM-001</span>
+                <div class="phase-card-inner">
+                  <div class="phase-stat">
+                    <div class="spec-number">0&rarr;5</div>
+                    <div class="phase-stat-label">Team Built from Scratch</div>
+                  </div>
+                  <div class="phase-stat-divider"></div>
+                  <h3>Engineering Manager</h3>
+                  <div class="phase-context">Cylinder Health &mdash; Series B HealthTech</div>
+                  <p class="phase-desc">Built an engineering team from scratch. Hired every person, doubled the team, launched an internship program, promoted engineers into senior roles. Created a culture where people want to do their best work.</p>
+                  <div class="phase-tech">
+                    <span class="tech-item">TypeScript</span>
+                    <span class="tech-item">React</span>
+                    <span class="tech-item">Node.js</span>
+                    <span class="tech-item">Go</span>
+                    <span class="tech-item">Firebase</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="leader leader-down"></div>
+            <div class="phase-node">
+              <div class="crosshair" style="animation-delay: 1s;">
+                <div class="crosshair-circle"></div>
+              </div>
+              <div class="phase-year">2020&ndash;Present</div>
+            </div>
+          </div>
+
+          <!-- ======== PHASE 4: What's Next (below) ======== -->
+          <div class="phase phase-even reveal" style="transition-delay: 0.4s;">
+            <div class="phase-node">
+              <div class="crosshair" style="animation-delay: 1.5s;">
+                <div class="crosshair-circle"></div>
+              </div>
+              <div class="phase-year">Now</div>
+            </div>
+            <div class="leader leader-up"></div>
+            <div class="phase-card-wrapper">
+              <div class="spec-card corner-fold phase-card reveal" style="transition-delay: 0.45s;">
+                <div class="card-grid-overlay"></div>
+                <div class="pin"></div>
+                <span class="card-seq">SPEC-NEXT-001</span>
+                <div class="phase-card-inner">
+                  <div class="phase-stat">
+                    <div class="spec-number">20+</div>
+                    <div class="phase-stat-label">Years &amp; Counting</div>
+                  </div>
+                  <div class="phase-stat-divider"></div>
+                  <h3>What's Next</h3>
+                  <div class="phase-context">The next chapter</div>
+                  <p class="phase-desc">Leading Member Experience, overseeing all front-end engineering, driving CI/CD enablement, architecting HIPAA-compliant AI features. Ready for Director/VP of Engineering or CTO at an early-stage startup.</p>
+                  <div class="phase-tech">
+                    <span class="tech-item">AI/LLM</span>
+                    <span class="tech-item">Go</span>
+                    <span class="tech-item">React</span>
+                    <span class="tech-item">DevOps</span>
+                    <span class="tech-item">Leadership</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ======== DIMENSION LINE DIVIDER ======== -->
+      <div class="dimension-line reveal">
+        <div class="end-mark-left"></div>
+        <span class="dim-label">What's Next</span>
+        <div class="end-mark-right"></div>
+      </div>
+
+      <!-- ======== FOOTER CTA SECTION ======== -->
+      <section class="journey-footer reveal">
+        <div class="crosshair footer-crosshair" style="animation-delay: 2s;">
+          <div class="crosshair-circle"></div>
+        </div>
+
+        <div class="footer-spec reveal">
+          <span class="rev-label">SPEC-CTA-001</span>
+        </div>
+
+        <div class="reveal footer-annotation">
+          <div class="section-label">
+            <span class="section-label-text">Next Steps</span>
+          </div>
+        </div>
+
+        <div class="spec-card cta-card reveal" style="transition-delay: 0.1s;">
+          <div class="card-grid-overlay"></div>
+          <div class="cta-card-inner">
+            <p class="cta-text">
+              I'm at an inflection point. After 20 years of building &mdash; systems, teams, and companies &mdash; I'm ready for the next challenge. Director/VP of Engineering at a scale-up, or CTO at an early-stage startup building AI products.
+            </p>
+            <div class="cta-links">
+              <a href="/about" class="cta-link">Read the full story &rarr;</a>
+              <a href="https://www.linkedin.com/in/johan-buys/" target="_blank" rel="noopener noreferrer" class="cta-link">Connect on LinkedIn &nearr;</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<!-- ======== SCROLL-DRIVEN LINE DRAWING ======== -->
+<script is:inline>
+  function initTimeline() {
+    var path = document.querySelector('.timeline-path');
+    var container = document.querySelector('#timeline-container');
+    if (!path || !container) return;
+
+    // Respect prefers-reduced-motion
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      path.style.strokeDasharray = 'none';
+      path.style.strokeDashoffset = '0';
+      return;
+    }
+
+    var length = path.getTotalLength();
+    path.style.strokeDasharray = length;
+    path.style.strokeDashoffset = length;
+
+    var ticking = false;
+
+    function onScroll() {
+      if (!ticking) {
+        requestAnimationFrame(function() {
+          var rect = container.getBoundingClientRect();
+          var windowH = window.innerHeight;
+          var scrollStart = windowH * 0.8;
+          var totalTravel = rect.height + scrollStart;
+          var scrolled = scrollStart - rect.top;
+          var progress = Math.max(0, Math.min(1, scrolled / totalTravel));
+          path.style.strokeDashoffset = length * (1 - progress);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    onScroll();
+  }
+  document.addEventListener('astro:page-load', initTimeline);
+  initTimeline();
+</script>
+
+<!-- ======== CROSSHAIR PARALLAX ======== -->
+<script is:inline>
+  function initJourneyParallax() {
+    if (window.matchMedia('(min-width: 1024px)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      var crosshairs = document.querySelectorAll('.crosshair');
+      document.addEventListener('mousemove', function(e) {
+        var x = (e.clientX / window.innerWidth - 0.5) * 8;
+        var y = (e.clientY / window.innerHeight - 0.5) * 8;
+        crosshairs.forEach(function(ch, i) {
+          var factor = i % 2 === 0 ? 1 : -1;
+          ch.style.transform = 'translate(' + (x * factor) + 'px, ' + (y * factor) + 'px)';
+        });
+      });
+    }
+  }
+  document.addEventListener('astro:page-load', initJourneyParallax);
+  initJourneyParallax();
+</script>
+
+<style>
+  /* ---- MAIN ---- */
+  main {
+    max-width: 1152px;
+    width: 100%;
+    padding: 2em 1rem;
+  }
+
+  @media (min-width: 640px) {
+    main {
+      padding: 2em 1.5rem;
+    }
+  }
+
+  /* ---- PAGE HEADER ---- */
+  .page-header {
+    position: relative;
+    padding: 3em 0 2em;
+    animation: fadeIn 0.6s ease-out both;
+  }
+
+  .header-crosshair-tl {
+    top: 0;
+    left: -40px;
+    display: none;
+  }
+
+  .header-crosshair-br {
+    bottom: 0;
+    right: -40px;
+    display: none;
+  }
+
+  .header-spec {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .header-annotation {
+    margin-bottom: 1.5em;
+  }
+
+  .page-title {
+    font-family: var(--font-mono);
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    margin-bottom: 0.5em;
+    color: var(--text);
+  }
+
+  .page-subtitle {
+    font-family: var(--font-serif);
+    font-size: 1.15em;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    max-width: 680px;
+    margin: 0;
+  }
+
+  .header-dim {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    max-width: 280px;
+    margin-top: 2.5em;
+  }
+
+  .dim-end-mark {
+    width: 1px;
+    height: 12px;
+    background: rgba(27, 42, 74, 0.3);
+  }
+
+  .dim-ruler {
+    flex: 1;
+    height: 1px;
+    background: rgba(27, 42, 74, 0.3);
+  }
+
+  .dim-section-label {
+    font-family: var(--font-mono);
+    font-size: 0.55rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(27, 42, 74, 0.3);
+    white-space: nowrap;
+  }
+
+  /* ---- TIMELINE CONTAINER ---- */
+  .timeline-container {
+    position: relative;
+    padding: 4em 0;
+  }
+
+  /* The SVG line */
+  .timeline-svg {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    transform: translateY(-50%);
+    z-index: 1;
+    pointer-events: none;
+    overflow: visible;
+  }
+
+  .timeline-path {
+    stroke: var(--accent);
+    stroke-width: 2;
+    fill: none;
+  }
+
+  /* ---- PHASES GRID (Desktop) ---- */
+  .phases {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5em;
+  }
+
+  .phase {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Odd phases (1, 3): card above, node below */
+  .phase-odd {
+    padding-bottom: 80px;
+  }
+
+  /* Even phases (2, 4): node above, card below */
+  .phase-even {
+    padding-top: 80px;
+  }
+
+  /* ---- PHASE NODE ---- */
+  .phase-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35em;
+    z-index: 3;
+  }
+
+  .phase-node .crosshair {
+    position: relative;
+    width: 24px;
+    height: 24px;
+  }
+
+  .phase-year {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  /* ---- LEADER LINES ---- */
+  .leader {
+    width: 1px;
+    background: var(--accent);
+    opacity: 0.4;
+    z-index: 2;
+    align-self: center;
+  }
+
+  .leader-down {
+    height: 24px;
+  }
+
+  .leader-up {
+    height: 24px;
+  }
+
+  /* ---- PHASE CARD ---- */
+  .phase-card-wrapper {
+    flex: 1;
+  }
+
+  .phase-card {
+    padding: 1.5em 1.25em;
+    padding-top: 2em;
+    height: 100%;
+  }
+
+  .phase-card-inner {
+    position: relative;
+    z-index: 10;
+  }
+
+  .phase-card h3 {
+    font-family: var(--font-mono);
+    font-size: 0.8em;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin: 0 0 0.25em;
+    color: var(--text);
+  }
+
+  .phase-context {
+    font-family: var(--font-mono);
+    font-size: 0.65em;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+    margin-bottom: 0.75em;
+  }
+
+  .phase-desc {
+    font-family: var(--font-serif);
+    font-size: 0.9em;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 1em;
+  }
+
+  /* ---- PHASE STAT ---- */
+  .phase-stat {
+    margin-bottom: 0.5em;
+    text-align: center;
+  }
+
+  .phase-stat .spec-number {
+    font-size: 2em;
+  }
+
+  .phase-stat-label {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .phase-stat-divider {
+    width: 32px;
+    height: 1px;
+    background: var(--accent);
+    margin: 0.5em auto 0.75em;
+  }
+
+  /* ---- TECH PILLS ---- */
+  .phase-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3em;
+    margin-top: 0.5em;
+  }
+
+  .tech-item {
+    font-family: var(--font-mono);
+    font-size: 0.6em;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    padding: 0.2em 0.6em;
+    border-radius: 2px;
+    transition: all var(--transition-fast);
+  }
+
+  .phase-card:hover .tech-item {
+    border-color: var(--border-hover);
+    color: var(--text-secondary);
+  }
+
+  /* ---- JOURNEY FOOTER CTA ---- */
+  .journey-footer {
+    position: relative;
+    padding: 3em 0 2em;
+  }
+
+  .footer-crosshair {
+    top: 20px;
+    right: -40px;
+    display: none;
+  }
+
+  .footer-spec {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .footer-annotation {
+    margin-bottom: 2em;
+  }
+
+  .cta-card {
+    padding: 2em;
+  }
+
+  .cta-card-inner {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .cta-text {
+    font-family: var(--font-serif);
+    font-size: 1.1em;
+    line-height: 1.75;
+    color: var(--text-secondary);
+    margin-bottom: 1.5em;
+  }
+
+  .cta-links {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    flex-wrap: wrap;
+  }
+
+  .cta-link {
+    font-family: var(--font-mono);
+    font-size: 0.75em;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--accent);
+    border-bottom: 1px solid var(--accent-glow-strong);
+    padding-bottom: 2px;
+    transition: border-color var(--transition-fast), color var(--transition-fast);
+  }
+
+  .cta-link:hover {
+    border-bottom-color: var(--accent);
+    color: var(--accent);
+  }
+
+  /* ---- RESPONSIVE: Tablet ---- */
+  @media (min-width: 640px) {
+    .page-title {
+      font-size: 3rem;
+    }
+
+    .page-subtitle {
+      font-size: 1.2em;
+    }
+  }
+
+  /* ---- RESPONSIVE: Desktop ---- */
+  @media (min-width: 1024px) {
+    .page-header {
+      padding: 5em 0 3em;
+    }
+
+    .page-title {
+      font-size: 4rem;
+    }
+
+    .header-crosshair-tl,
+    .header-crosshair-br,
+    .footer-crosshair {
+      display: block;
+    }
+
+    .phase-stat .spec-number {
+      font-size: 2.5em;
+    }
+  }
+
+  /* ---- RESPONSIVE: Mobile (max 768px) ---- */
+  @media (max-width: 768px) {
+    .timeline-svg {
+      display: none;
+    }
+
+    .phases {
+      grid-template-columns: 1fr;
+      gap: 0;
+      border-left: 2px solid var(--accent);
+      margin-left: 12px;
+      padding-left: 0;
+    }
+
+    .phase-odd,
+    .phase-even {
+      padding: 0 0 2em 2em;
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 0;
+    }
+
+    /* Reorder so node is always on the left for mobile */
+    .phase-odd {
+      flex-direction: column;
+    }
+
+    .phase-even {
+      flex-direction: column;
+    }
+
+    .phase-node {
+      position: absolute;
+      left: -2em;
+      top: 0;
+      transform: translateX(-50%);
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .phase-node .crosshair {
+      width: 20px;
+      height: 20px;
+    }
+
+    .phase-year {
+      writing-mode: horizontal-tb;
+      position: absolute;
+      top: -1.2em;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.55rem;
+    }
+
+    .leader {
+      display: none;
+    }
+
+    .phase-card-wrapper {
+      width: 100%;
+    }
+
+    .phase-card {
+      padding: 1.25em 1em;
+      padding-top: 1.75em;
+    }
+
+    .phase-stat .spec-number {
+      font-size: 1.75em;
+    }
+
+    .cta-card {
+      padding: 1.5em;
+    }
+
+    .cta-links {
+      flex-direction: column;
+      gap: 1em;
+      align-items: center;
+    }
+  }
+
+  /* ---- RESPONSIVE: Small mobile ---- */
+  @media (max-width: 480px) {
+    .page-title {
+      font-size: 2rem;
+    }
+
+    .phase-desc {
+      font-size: 0.85em;
+    }
+  }
+</style>
