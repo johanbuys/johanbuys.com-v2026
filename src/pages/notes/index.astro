@@ -1,12 +1,10 @@
 ---
-import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import BaseHead from "../../components/BaseHead.astro";
 import Footer from "../../components/Footer.astro";
 import FormattedDate from "../../components/FormattedDate.astro";
 import Header from "../../components/Header.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
-import documentIcon from "../../assets/document.png";
 
 const posts = (await getCollection("notes")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -16,156 +14,146 @@ const posts = (await getCollection("notes")).sort(
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <style>
-      main {
-        width: 720px;
-        max-width: calc(100% - 2em);
-        margin: auto;
-        padding: 3em 1em;
-      }
-
-      h1 {
-        text-align: center;
-        margin-bottom: 2em;
-        color: rgb(var(--black));
-      }
-
-      /* List layout */
-      ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-      }
-
-      ul li {
-        border: 1px solid rgb(var(--gray-light));
-        border-radius: 12px;
-        overflow: hidden;
-        transition: all 0.2s ease;
-      }
-
-      ul li:hover {
-        border-color: rgb(var(--accent));
-        box-shadow: 0 4px 12px rgba(var(--gray), 0.15);
-        transform: translateY(-1px);
-      }
-
-      ul li a {
-        display: flex;
-        align-items: center;
-        gap: 1.5rem;
-        padding: 1.5rem;
-        text-decoration: none;
-        color: inherit;
-        transition: all 0.2s ease;
-        min-height: 100px;
-      }
-
-      /* Note icon */
-      .note-icon {
-        flex-shrink: 0;
-        width: 56px;
-        height: 56px;
-        opacity: 0.7;
-        transition: all 0.3s ease;
-      }
-
-      ul li:hover .note-icon {
-        opacity: 1;
-        transform: scale(1.08);
-      }
-
-      /* Content */
-      .note-content {
-        flex-grow: 1;
-      }
-
-      .title {
-        margin: 0 0 0.5rem 0;
-        color: rgb(var(--black));
-        line-height: 1.3;
-        font-size: 1.25rem;
-        font-weight: 600;
-        transition: color 0.2s ease;
-      }
-
-      ul li:hover .title {
-        color: rgb(var(--accent));
-      }
-
-      .date {
-        margin: 0;
-        color: rgb(var(--gray));
-        font-size: 0.9em;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-      }
-
-      /* Mobile responsive */
-      @media (max-width: 720px) {
-        main {
-          padding: 1.5em 1em;
-        }
-
-        ul {
-          gap: 1rem;
-        }
-
-        ul li a {
-          padding: 1.25rem;
-          gap: 1.25rem;
-          min-height: 80px;
-        }
-
-        .note-icon {
-          width: 48px;
-          height: 48px;
-        }
-
-        .title {
-          font-size: 1.125rem;
-        }
-
-        .date {
-          font-size: 0.85em;
-        }
-      }
-    </style>
+    <BaseHead title={`Notes - ${SITE_TITLE}`} description={SITE_DESCRIPTION} />
   </head>
   <body>
     <Header />
     <main>
-      <section>
-        <ul>
-          {
-            posts.map((post) => (
-              <li>
-                <a href={`/notes/${post.id}/`}>
-                  <Image
-                    src={documentIcon}
-                    alt="Note"
-                    class="note-icon"
-                    width={48}
-                    height={48}
-                  />
-                  <div class="note-content">
-                    <h4 class="title">{post.data.title}</h4>
-                    <p class="date">
-                      <FormattedDate date={post.data.pubDate} />
-                    </p>
-                  </div>
-                </a>
-              </li>
-            ))
-          }
-        </ul>
+      <div class="page-header">
+        <h1>Notes</h1>
+        <p>Brief technical notes, learnings, and references.</p>
+      </div>
+
+      <section class="notes-list reveal-stagger reveal">
+        {
+          posts.map((post, index) => (
+            <a href={`/notes/${post.id}/`} class="note-item">
+              <div class="note-marker">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                  <path d="M3 2h7l3 3v9H3V2z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+                  <path d="M10 2v3h3" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/>
+                  <path d="M5 8h6M5 10.5h4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="note-content">
+                <h3 class="note-title">{post.data.title}</h3>
+              </div>
+              <span class="note-date">
+                <FormattedDate date={post.data.pubDate} />
+              </span>
+            </a>
+          ))
+        }
       </section>
     </main>
     <Footer />
   </body>
 </html>
+
+<style>
+  main {
+    width: 720px;
+    max-width: calc(100% - 2em);
+    margin: auto;
+    padding: 3em 1em;
+  }
+
+  .page-header {
+    margin-bottom: 2.5em;
+    animation: fadeIn 0.5s var(--ease-out) both;
+  }
+
+  .page-header h1 {
+    margin-bottom: 0.25em;
+  }
+
+  .page-header p {
+    font-size: 1.05em;
+    color: var(--text-muted);
+    margin: 0;
+  }
+
+  .notes-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .note-item {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding: 1em 0;
+    padding-left: 0;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s var(--ease-out);
+  }
+
+  .note-item:first-child {
+    border-top: 1px solid var(--border);
+  }
+
+  .note-item:hover {
+    padding-left: 0.75em;
+    background: linear-gradient(90deg, var(--accent-glow), transparent 40%);
+  }
+
+  .note-marker {
+    flex-shrink: 0;
+    color: var(--text-muted);
+    transition: all 0.2s var(--ease-out);
+    display: flex;
+    align-items: center;
+  }
+
+  .note-item:hover .note-marker {
+    color: var(--accent);
+    transform: translateX(2px) scale(1.1);
+  }
+
+  .note-content {
+    flex-grow: 1;
+    min-width: 0;
+  }
+
+  .note-title {
+    font-family: var(--font-heading);
+    font-size: 1.05em;
+    font-weight: 600;
+    color: var(--text);
+    margin: 0;
+    transition: color var(--transition-fast);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .note-item:hover .note-title {
+    color: var(--accent);
+  }
+
+  .note-date {
+    flex-shrink: 0;
+    font-family: var(--font-mono);
+    font-size: 0.72em;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 720px) {
+    main {
+      padding: 1.5em 1em;
+    }
+
+    .note-item {
+      flex-wrap: wrap;
+      gap: 0.5em;
+    }
+
+    .note-date {
+      width: 100%;
+      padding-left: calc(16px + 1em);
+    }
+  }
+</style>

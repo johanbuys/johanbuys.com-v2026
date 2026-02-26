@@ -19,25 +19,39 @@ const { title, pubDate } = Astro.props;
         max-width: 100%;
         margin: 0;
       }
+
       .prose {
         width: 720px;
         max-width: calc(100% - 2em);
         margin: auto;
         padding: 1em;
-        color: rgb(var(--gray-dark));
       }
-      .title {
-        margin-bottom: 1em;
-        padding: 1em 0;
-        text-align: center;
-        line-height: 1;
+
+      .article-header {
+        margin-bottom: 2.5em;
+        padding: 2em 0 1.5em;
+        border-bottom: 1px solid var(--border);
       }
-      .title h1 {
-        margin: 0 0 0.5em 0;
+
+      .article-header h1 {
+        font-size: 2.2em;
+        line-height: 1.15;
+        letter-spacing: -0.03em;
+        margin: 0.5em 0 0;
       }
-      .date {
-        margin-bottom: 0.5em;
-        color: rgb(var(--gray));
+
+      .date-info {
+        font-family: var(--font-mono);
+        font-size: 0.72em;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+      }
+
+      @media (max-width: 720px) {
+        .article-header h1 {
+          font-size: 1.6em;
+        }
       }
     </style>
   </head>
@@ -47,12 +61,11 @@ const { title, pubDate } = Astro.props;
     <main>
       <article>
         <div class="prose">
-          <div class="title">
-            <div class="date">
+          <div class="article-header" style="animation: fadeInUp 0.5s var(--ease-out) both;">
+            <div class="date-info">
               <FormattedDate date={pubDate} />
             </div>
             <h1>{title}</h1>
-            <hr />
           </div>
           <slot />
         </div>
