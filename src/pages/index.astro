@@ -38,11 +38,7 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 
         <!-- Hero title -->
         <h1 class="hero-title animate-entrance delay-2">
-          Hi, I'm <span class="hero-name">Johan
-            <svg class="hero-underline" height="6" viewBox="0 0 200 6" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0 3 L5 0 L10 3 L15 0 L20 3 L25 0 L30 3 L35 0 L40 3 L45 0 L50 3 L55 0 L60 3 L65 0 L70 3 L75 0 L80 3 L85 0 L90 3 L95 0 L100 3 L105 0 L110 3 L115 0 L120 3 L125 0 L130 3 L135 0 L140 3 L145 0 L150 3 L155 0 L160 3 L165 0 L170 3 L175 0 L180 3 L185 0 L190 3 L195 0 L200 3" stroke="#E63946" stroke-width="1.5" vector-effect="non-scaling-stroke"/>
-            </svg>
-          </span>
+          Hi, I'm <span class="hero-name">Johan</span><span class="cursor">|</span>
         </h1>
 
         <!-- Intro -->
@@ -375,15 +371,17 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 
   .hero-name {
     color: var(--accent);
-    position: relative;
-    display: inline-block;
   }
 
-  .hero-underline {
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 100%;
+  .cursor {
+    color: var(--accent);
+    font-weight: 300;
+    animation: blink 1s step-end infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
   }
 
   .hero-body {

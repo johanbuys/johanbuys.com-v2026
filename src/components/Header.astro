@@ -297,7 +297,8 @@ import HeaderLink from "./HeaderLink.astro";
     var menuLine3 = document.getElementById('menuLine3');
     var menuOpen = false;
 
-    if (menuBtn && mobileMenu) {
+    if (menuBtn && mobileMenu && !menuBtn.dataset.bound) {
+      menuBtn.dataset.bound = 'true';
       menuBtn.addEventListener('click', function() {
         menuOpen = !menuOpen;
         mobileMenu.classList.toggle('open');
