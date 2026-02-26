@@ -31,20 +31,26 @@ const { title, description, pubDate, heroImage, tags, url, techStack, featured }
 			.hero-image img {
 				display: block;
 				width: 100%;
-				border-radius: 12px;
+				border-radius: 2px;
 				border: 1px solid var(--border);
 				transition: border-color var(--transition);
 			}
 
 			.hero-image img:hover {
-				border-color: var(--border-hover);
+				border-color: var(--accent);
 			}
 
 			.prose {
 				width: 720px;
 				max-width: calc(100% - 2em);
 				margin: auto;
-				padding: 1em;
+				padding: 2em;
+				background: var(--bg-card);
+				border: 1px solid var(--border);
+				border-radius: 2px;
+				box-shadow: var(--shadow-sm);
+				margin-top: 1.5em;
+				margin-bottom: 2em;
 			}
 
 			.article-header {
@@ -54,7 +60,7 @@ const { title, description, pubDate, heroImage, tags, url, techStack, featured }
 			}
 
 			.article-header h1 {
-				font-size: 2.5em;
+				font-size: 2.2em;
 				line-height: 1.12;
 				letter-spacing: -0.03em;
 				margin: 0.5em 0 0;
@@ -62,8 +68,8 @@ const { title, description, pubDate, heroImage, tags, url, techStack, featured }
 
 			.date-info {
 				font-family: var(--font-mono);
-				font-size: 0.72em;
-				letter-spacing: 0.06em;
+				font-size: 0.68em;
+				letter-spacing: 0.08em;
 				text-transform: uppercase;
 				color: var(--text-muted);
 				display: flex;
@@ -76,31 +82,51 @@ const { title, description, pubDate, heroImage, tags, url, techStack, featured }
 				font-size: 1em;
 				font-weight: 600;
 				text-transform: uppercase;
-				letter-spacing: 0.08em;
-				color: var(--bg-deep);
+				letter-spacing: 0.1em;
+				color: var(--bg-white);
 				background: var(--accent);
 				padding: 0.15em 0.5em;
-				border-radius: 3px;
+				border-radius: 2px;
 			}
 
 			/* Meta section */
 			.meta {
+				position: relative;
 				margin-bottom: 2.5em;
 				padding: 1.5em;
-				background: var(--bg-surface);
+				background: var(--bg-card);
 				border: 1px solid var(--border);
-				border-radius: 10px;
+				border-radius: 2px;
 				display: flex;
 				flex-direction: column;
 				gap: 1.25em;
 			}
 
+			/* Grid overlay on meta */
+			.meta::after {
+				content: '';
+				position: absolute;
+				inset: 0;
+				background-image:
+					linear-gradient(var(--line-light) 1px, transparent 1px),
+					linear-gradient(90deg, var(--line-light) 1px, transparent 1px);
+				background-size: 20px 20px;
+				opacity: 0.15;
+				pointer-events: none;
+				border-radius: inherit;
+			}
+
+			.meta-section {
+				position: relative;
+				z-index: 1;
+			}
+
 			.meta-section h3 {
 				font-family: var(--font-mono);
-				font-size: 0.7em;
+				font-size: 0.65em;
 				font-weight: 600;
 				text-transform: uppercase;
-				letter-spacing: 0.08em;
+				letter-spacing: 0.1em;
 				color: var(--text-muted);
 				margin: 0 0 0.6em 0;
 			}
@@ -118,14 +144,14 @@ const { title, description, pubDate, heroImage, tags, url, techStack, featured }
 			}
 
 			.external-link:hover {
-				color: var(--accent-bright);
+				color: var(--accent-light);
 			}
 
 			.external-link::after {
 				content: '\2197';
 				font-size: 1.1em;
 				display: inline-block;
-				transition: transform 0.2s var(--ease-out);
+				transition: transform 0.2s ease;
 			}
 
 			.external-link:hover::after {
@@ -143,29 +169,29 @@ const { title, description, pubDate, heroImage, tags, url, techStack, featured }
 
 			.tag {
 				font-family: var(--font-mono);
-				font-size: 0.75em;
+				font-size: 0.7em;
 				font-weight: 500;
 				color: var(--accent);
 				background: var(--accent-glow);
 				padding: 0.25em 0.65em;
-				border-radius: 4px;
-				border: 1px solid rgba(200, 162, 78, 0.2);
+				border-radius: 2px;
+				border: 1px solid var(--accent-glow-strong);
 			}
 
 			.tech-item {
 				font-family: var(--font-mono);
-				font-size: 0.75em;
+				font-size: 0.7em;
 				font-weight: 500;
 				color: var(--text-secondary);
-				background: var(--bg-deep);
+				background: var(--bg);
 				border: 1px solid var(--border);
 				padding: 0.25em 0.65em;
-				border-radius: 4px;
+				border-radius: 2px;
 			}
 
 			@media (max-width: 720px) {
 				.article-header h1 {
-					font-size: 1.8em;
+					font-size: 1.6em;
 				}
 
 				.meta {
@@ -179,11 +205,11 @@ const { title, description, pubDate, heroImage, tags, url, techStack, featured }
 		<Header />
 		<main>
 			<article>
-				<div class="hero-image" style="animation: fadeIn 0.5s var(--ease-out) both;">
+				<div class="hero-image" style="animation: fadeIn 0.5s ease-out both;">
 					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" />}
 				</div>
 				<div class="prose">
-					<div class="article-header" style="animation: fadeInUp 0.5s var(--ease-out) 0.15s both;">
+					<div class="article-header" style="animation: fadeInUp 0.5s ease-out 0.15s both;">
 						<div class="date-info">
 							<FormattedDate date={pubDate} />
 							{featured && <span class="featured-badge">Featured</span>}
